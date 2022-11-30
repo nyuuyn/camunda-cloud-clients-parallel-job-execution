@@ -23,7 +23,7 @@ public class ParallelJobsJavaApplication {
 	public static void startProcessInstances(ZeebeClient zeebeClient) {
 		System.out.println("Start process instances...");
 		for (int i = 0; i < 500; i++) {
-			zeebeClient.newCreateInstanceCommand().bpmnProcessId("rest").latestVersion().send()
+			zeebeClient.newCreateInstanceCommand().bpmnProcessId("thomannTestProcess").latestVersion().send()
 				// using blocking command to avoid getting too much backpressure
 				// (topic for an upcoming blog post :-))
 			    .join();
